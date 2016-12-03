@@ -8,6 +8,13 @@ $( document ).ready(function() {
 	//Load ten static, non-animated gifs with ratings, and add them all to gifsAndRatings
 	//(Don't append.  Load ten new gifs.)
 
+$("button").on("click", function() {
+	// Grabbing and storing the data-animal property value from the button
+    var emotion = $(this).data("emotion");
+
+    console.log(emotion);
+})
+
 //When a gif is clicked...
 	//if it's inactive, activate it
 	//if it's active, deactivate it
@@ -22,10 +29,10 @@ function loadButtons() {
 	for (var i = 0; i<topics.length; i++) {
 		var gifTopic = topics[i];
 		if (i===0) {
-			$("#buttonArea").html('<button type="submit">' + gifTopic + '</button>');
+			$("#buttonArea").html('<button type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
 		}
 		else {
-			$("#buttonArea").append('<button type="submit">' + gifTopic + '</button>');
+			$("#buttonArea").append('<button type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
 		}
 	}
 }

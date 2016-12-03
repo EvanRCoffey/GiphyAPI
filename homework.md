@@ -1,9 +1,12 @@
 # GifTastic
 
+
 ### Overview
 In this assignment, you'll use the GIPHY API to make a dynamic web page that populates with gifs of your choice. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
 
 ![GIPHY](Images/1-giphy.jpg)
+
+
 
 ### Before You Begin
 
@@ -20,6 +23,8 @@ In this assignment, you'll use the GIPHY API to make a dynamic web page that pop
 2. **[Watch the demo video](homework_demo.mov)**.
 
 	* You should have a high-level understanding of how this assignment works before attempting to code it.
+
+
 
 ### Instructions
 
@@ -49,3 +54,24 @@ If you have any questions about this project or about the material we covered, t
 
 ## Copyright
 Coding Boot Camp (C) 2016. All Rights Reserved.
+
+
+
+_______________________________________________________________________________
+
+addButton form
+-adds new term to array
+-reload the buttons including new term
+___________________________________
+
+q: search query term or phrase
+
+limit: number of results to return (max 100, default 25)
+
+rating: limit results to those rated (y,g,pg,pg-13, or r)
+____________________________________
+
+public api key: dc6zaTOxFJmzC
+____________________________________
+
+Having trouble getting the buttons to work correctly.  Just trying to click the button and have it console.log the name of that button.  Not working for some reason.
