@@ -4,16 +4,21 @@ $( document ).ready(function() {
     loadButtons();
 });
 
-//When a button is pressed...
-	//Load ten static, non-animated gifs with ratings, and add them all to gifsAndRatings
-	//(Don't append.  Load ten new gifs.)
-
-$("button").on("click", function() {
-	// Grabbing and storing the data-animal property value from the button
+//When a button is clicked, load ten static gifs with ratings, then add them all to gifsAndRatings
+$(document).on("click", '.dynamicBtn', function() {
     var emotion = $(this).data("emotion");
-
     console.log(emotion);
-})
+    for (var i = 0; i<10; i++) {
+    	//Load the first gif and its rating
+    	if (i===0) {
+			$("#gifsAndRatings").html("Gif and rating goes here");
+		}
+		//Append the other nine gifs and their ratings
+		else {
+			$("#gifsAndRatings").append("Gif and rating goes here");
+		}
+    }
+});
 
 //When a gif is clicked...
 	//if it's inactive, activate it
@@ -29,10 +34,10 @@ function loadButtons() {
 	for (var i = 0; i<topics.length; i++) {
 		var gifTopic = topics[i];
 		if (i===0) {
-			$("#buttonArea").html('<button type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
+			$("#buttonArea").html('<button class="dynamicBtn" type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
 		}
 		else {
-			$("#buttonArea").append('<button type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
+			$("#buttonArea").append('<button class="dynamicBtn" type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
 		}
 	}
 }
