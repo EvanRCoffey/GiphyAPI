@@ -1,14 +1,19 @@
 #buttonArea {
-	height: 150px;
 	border: 1px solid black;
 }
 
 #addButton {
-	height: 150px;
 	border: 1px solid black;
 }
 
 #gifsAndRatings {
 	border: 1px solid black;
-	margin-bottom: 20px;
+}
+
+body {
+	background-color: #165f11;
+}
+
+.container {
+	background-color: #af8254;
 }

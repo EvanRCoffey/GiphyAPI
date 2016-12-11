@@ -5,7 +5,7 @@ var topics = ['happy', 'sad', 'angry', 'scared', 'disgusted', 'sleepy', 'hyper',
 $(document).on("click", '.dynamicBtn', function() {
     var emotion = $(this).data("emotion");
     console.log(emotion);
-	var queryURL = "http:api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=dc6zaTOxFJmzC&limit=10";
+	var queryURL = "http:api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg";
 
 	// Perfoming an AJAX GET request to our queryURL
 	$.ajax({
@@ -61,6 +61,11 @@ function loadButtons() {
 			$("#buttonArea").append('<button class="dynamicBtn" type="submit" data-emotion="' + gifTopic + '">' + gifTopic + '</button>');
 		}
 	}
+}
+
+function myFunction() {
+    var x = document.getElementById("frm1");
+    console.log(x);
 }
 
 $( document ).ready(function() {

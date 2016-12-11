@@ -1,7 +1,3 @@
-only take GIFs of a certain rating
-
 animate the gifs on first click, undo it with second click
 
 take form data, add it to array, loadButtons()
-
-style the page
