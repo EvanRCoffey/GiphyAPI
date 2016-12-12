@@ -20,35 +20,38 @@ $(document).on("click", '.dynamicBtn', function() {
 
 		// Putting ten gifs and ratings in "gifsAndRatings"
 		for (var i = 0; i<10; i++) {
-			var imageUrl = response.data[i].images.original_still.url;
-			var emotionImage = $("<img class='gif'>");
+			var stillGif = response.data[i].images.original_still.url;
+			var emotionStill = $("<img class='gif'>");
 
-			emotionImage.attr("src", imageUrl);
-			emotionImage.attr("alt", "emotion image");
-			emotionImage.attr("width", "200px");
-			emotionImage.attr("height", "200px");
+			emotionStill.attr("src", stillGif);
+			emotionStill.attr("alt", "emotion");
+			emotionStill.attr("width", "200px");
+			emotionStill.attr("height", "200px");
 
 			//Overwrite the HTML for the first GIF
 			if (i === 0) {
-				$("#gifsAndRatings").html(emotionImage);
+				$("#gifsAndRatings").html(emotionStill);
 				$("#gifsAndRatings").append("<-- Rating: " + response.data[i].rating);
 			}
 			//Append for the rest
 			else {
-				$("#gifsAndRatings").append(emotionImage);
+				$("#gifsAndRatings").append(emotionStill);
 				$("#gifsAndRatings").append("<-- Rating: " + response.data[i].rating);
 			};
 		};
 	});
 });
 
-//When a gif is clicked...
-	//if it's inactive, activate it
-	//if it's active, deactivate it
-
-//When a new word is typed into the form...
-	//Append the word to the end of the array
-	//loadButtons();
+// When a gif is clicked, if it's static, animate it.  If it's animated, make it static.
+$(document).on("click", '.gif', function() {
+	// get the src of the image
+	var src = jQuery(this).attr("src");
+	// change the image
+	if(jQuery(src.split("_")).last()[0] == "s.gif")
+		jQuery(this).attr('src', src.replace('_s.gif', '.gif'));
+	else
+		jQuery(this).attr('src', src.replace('.gif', '_s.gif'));
+})
 
 //Creates a button for each member in the topics[] array and adds them to buttonArea
 function loadButtons() {
@@ -63,7 +66,10 @@ function loadButtons() {
 	}
 }
 
-function myFunction() {
+//When a new word is typed into the form...
+//Append the word to the end of the array
+//loadButtons()
+function loadNewButton() {
     var x = document.getElementById("frm1");
     console.log(x);
 }
