@@ -5,7 +5,7 @@ var topics = ['happy', 'sad', 'angry', 'scared', 'disgusted', 'sleepy', 'hyper',
 $(document).on("click", '.dynamicBtn', function() {
     var emotion = $(this).data("emotion");
     console.log(emotion);
-	var queryURL = "http:api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg";
+	var queryURL = "https:api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg";
 	console.log(queryURL);
 
 	//Perfoming an AJAX GET request to our queryURL
